@@ -146,6 +146,8 @@
     pavucontrol
     gnome.gnome-tweaks
     cudaPackages.cudatoolkit
+    gparted
+    efibootmgr
     # various
     chromium telegram-desktop 
     obsidian zotero
