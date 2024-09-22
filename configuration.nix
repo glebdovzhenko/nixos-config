@@ -138,6 +138,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    anydesk
     intel-ocl
     opencl-info
     home-manager
