@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   programs.zsh = {
+    dotDir = ".config/zsh";
     enableCompletion = true;
     syntaxHighlighting = {
       enable = true;
