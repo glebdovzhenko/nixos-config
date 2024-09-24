@@ -113,10 +113,10 @@
   # zsh
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    syntaxHighlighting = {
-      enable = true;
-    };
+  #  enableCompletion = true;
+  #  syntaxHighlighting = {
+  #    enable = true;
+  #  };
   };
   
   fonts.packages = with pkgs; [
