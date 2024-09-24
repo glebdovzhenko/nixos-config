@@ -5,5 +5,8 @@
     syntaxHighlighting = {
       enable = true;
     };
+    initExtra = ''
+    eval "$(direnv hook zsh)"
+    '';
   };
 }
