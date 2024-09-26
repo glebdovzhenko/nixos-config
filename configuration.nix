@@ -111,13 +111,7 @@
   # services.xserver.libinput.enable = true;
   
   # zsh
-  programs.zsh = {
-    enable = true;
-  #  enableCompletion = true;
-  #  syntaxHighlighting = {
-  #    enable = true;
-  #  };
-  };
+  programs.zsh.enable = true;
   
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["DejaVuSansMono"];})
