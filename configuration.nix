@@ -132,7 +132,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    anydesk
+    remmina
+    freerdp
     intel-ocl
     opencl-info
     home-manager
@@ -158,6 +159,7 @@
     nodejs_22
     luajit
     luajitPackages.luarocks
+    wl-clipboard
   ];
   programs.firefox.enable = true;
 
