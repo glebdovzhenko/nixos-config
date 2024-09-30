@@ -80,12 +80,12 @@
   };
 
   # NTFS
-  boot.supportedFilesystems = [ "ntfs" ];
-  fileSystems."/home/glebd/Windows" =
-    { device = "/dev/nvme0n1p3";
-      fsType = "ntfs-3g"; 
-      options = [ "rw" "uid=1000"];
-    };
+   boot.supportedFilesystems = [ "ntfs" ];
+   fileSystems."/home/glebd/Data" =
+     { device = "/dev/nvme0n1p2";
+       fsType = "ntfs-3g"; 
+       options = [ "rw" "uid=1000" "nofail"];
+     };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
