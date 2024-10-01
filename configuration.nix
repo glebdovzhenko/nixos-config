@@ -160,6 +160,7 @@
     luajit
     luajitPackages.luarocks
     wl-clipboard
+    libreoffice
   ];
   programs.firefox.enable = true;
 
