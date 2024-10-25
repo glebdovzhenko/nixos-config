@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -175,9 +175,11 @@
     python3
     black
     nodejs_22
+    lua
     luajit
     luajitPackages.luarocks
     luajitPackages.lua-lsp
+    lua-language-server
     nixpkgs-fmt
     wl-clipboard
     libreoffice
