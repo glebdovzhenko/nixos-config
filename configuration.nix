@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  
+
   # Enabling flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -56,23 +57,23 @@
   };
   hardware.nvidia.prime = {
     offload = {
-	  enable = true;
+      enable = true;
       enableOffloadCmd = true;
-	};
-    intelBusId = "PCI:0:2:0";  # pci@0000:00:02.0
-    nvidiaBusId = "PCI:1:0:0";  # pci@0000:01:00.0
+    };
+    intelBusId = "PCI:0:2:0"; # pci@0000:00:02.0
+    nvidiaBusId = "PCI:1:0:0"; # pci@0000:01:00.0
   };
   # Intel opencl
   hardware.opengl = {
     enable = true;
-    extraPackages = [pkgs.intel-compute-runtime pkgs.ocl-icd pkgs.intel-ocl];
+    extraPackages = [ pkgs.intel-compute-runtime pkgs.ocl-icd pkgs.intel-ocl ];
   };
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   #services.xserver.displayManager.gdm.wayland = false;
- 
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -80,12 +81,13 @@
   };
 
   # NTFS
-   boot.supportedFilesystems = [ "ntfs" ];
-   fileSystems."/home/glebd/Data" =
-     { device = "/dev/nvme0n1p2";
-       fsType = "ntfs-3g"; 
-       options = [ "rw" "uid=1000" "nofail"];
-     };
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/home/glebd/Data" =
+    {
+      device = "/dev/disk/by-uuid/5252D85E52D847FD";
+      fsType = "ntfs-3g";
+      options = [ "rw" "uid=1000" "nofail" ];
+    };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -109,12 +111,12 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-  
+
   # zsh
   programs.zsh.enable = true;
-  
+
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["DejaVuSansMono"];})
+    (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
   ];
 
 
@@ -145,15 +147,30 @@
     gparted
     efibootmgr
     # various
-    chromium telegram-desktop 
-    obsidian zotero
+    chromium
+    telegram-desktop
+    obsidian
+    zotero
     # cli
-    wget alacritty tmux neovim htop zoxide pass gnupg fzf ripgrep fd 
+    wget
+    alacritty
+    tmux
+    neovim
+    htop
+    zoxide
+    pass
+    gnupg
+    fzf
+    ripgrep
+    fd
     lazygit
     # dev
-    git 
-    gnumake gcc gdb
-    go gopls
+    git
+    gnumake
+    gcc
+    gdb
+    go
+    gopls
     python3
     black
     nodejs_22
@@ -161,17 +178,21 @@
     luajitPackages.luarocks
     wl-clipboard
     libreoffice
+    rustup
+    nixd
   ];
+
+  #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.firefox.enable = true;
 
   environment.sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
 
-    XDG_CACHE_HOME  = "$HOME/.cache";
+    XDG_CACHE_HOME = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_STATE_HOME = "$HOME/.local/state";
   };
 
   # Some programs need SUID wrappers, can be configured further or are

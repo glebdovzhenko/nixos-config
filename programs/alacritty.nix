@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
- 
+
   programs.alacritty = {
     enable = true;
     settings = {
@@ -9,9 +9,9 @@
       window.decorations = "none";
       keyboard.bindings = [
         {
-          key="Enter";
-	      mods="Alt";
-	      action="ToggleFullScreen";
+          key = "Enter";
+          mods = "Alt";
+          action = "ToggleFullScreen";
         }
       ];
 
@@ -43,11 +43,11 @@
       colors.indexed_colors = [
         {
           index = 16;
-	      color = "#ff9e64";
+          color = "#ff9e64";
         }
-	    {
+        {
           index = 17;
-	      color = "#db4b4b";
+          color = "#db4b4b";
         }
       ];
     };
