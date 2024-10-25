@@ -169,6 +169,7 @@
     gnumake
     gcc
     gdb
+    pyright
     go
     gopls
     python3
@@ -176,6 +177,8 @@
     nodejs_22
     luajit
     luajitPackages.luarocks
+    luajitPackages.lua-lsp
+    nixpkgs-fmt
     wl-clipboard
     libreoffice
     rustup
