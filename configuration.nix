@@ -208,6 +208,11 @@
     enableSSHSupport = true;
   };
 
+  services.udev.packages = [ 
+    pkgs.platformio-core
+    pkgs.openocd
+  ];
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
