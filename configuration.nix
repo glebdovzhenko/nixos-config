@@ -64,7 +64,7 @@
     nvidiaBusId = "PCI:1:0:0"; # pci@0000:01:00.0
   };
   # Intel opencl
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = [ pkgs.intel-compute-runtime pkgs.ocl-icd pkgs.intel-ocl ];
   };
@@ -137,12 +137,12 @@
     remmina
     freerdp
     intel-ocl
-    opencl-info
+    clinfo
     home-manager
     lshw
     pciutils
     pavucontrol
-    gnome.gnome-tweaks
+    gnome-tweaks
     cudaPackages.cudatoolkit
     gparted
     efibootmgr
