@@ -8,16 +8,6 @@
       enable = true;
     };
     plugins = [
-      #{
-      #  name = "enhancd";
-      #  file = "init.sh";
-      #  src = pkgs.fetchFromGitHub {
-      #    owner = "babarot";
-      #    repo = "enhancd";
-      #    rev = "v2.5.1";
-      #    sha256 = "sha256-kaintLXSfLH7zdLtcoZfVNobCJCap0S/Ldq85wd3krI=";
-      #  };
-      #}
       {
         name = "fzf-tab";
         file = "fzf-tab.plugin.zsh";

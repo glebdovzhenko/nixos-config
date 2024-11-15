@@ -208,7 +208,7 @@
     enableSSHSupport = true;
   };
 
-  services.udev.packages = [ 
+  services.udev.packages = [
     pkgs.platformio-core
     pkgs.openocd
   ];
