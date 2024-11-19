@@ -168,6 +168,7 @@
     git
     gnumake
     gcc
+    clang-tools
     gdb
     pyright
     go
@@ -212,6 +213,8 @@
     pkgs.platformio-core
     pkgs.openocd
   ];
+
+  services.udev.extraRules = "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", GROUP=\"users\", MODE=\"0666\"";
 
   # List services that you want to enable:
 
