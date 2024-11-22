@@ -132,7 +132,6 @@
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     remmina
     freerdp
@@ -199,6 +198,8 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
+    # GTK apps started dying at some point and this is a fix 
+    GSK_RENDERER="gl";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
