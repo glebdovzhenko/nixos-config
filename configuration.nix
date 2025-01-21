@@ -115,10 +115,12 @@
   # zsh
   programs.zsh.enable = true;
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+  #fonts.packages = with pkgs; [
+  #  (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
+  #];
+  fonts.packages = [
+    pkgs.nerd-fonts.dejavu-sans-mono
   ];
-
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.glebd = {
@@ -199,7 +201,7 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
     # GTK apps started dying at some point and this is a fix 
-    GSK_RENDERER="gl";
+    GSK_RENDERER = "gl";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
