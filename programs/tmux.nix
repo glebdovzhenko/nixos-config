@@ -7,6 +7,8 @@
       # TokyoNight colors for Tmux
 
       set-option -g default-terminal "screen-256color" 
+      set-option -sg escape-time 10
+      set-option -a terminal-features 'alacritty:RGB'
 
       set -g mode-style "fg=#7aa2f7,bg=#3b4261"
 
