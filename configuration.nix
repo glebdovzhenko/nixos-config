@@ -187,6 +187,7 @@
     libreoffice
     rustup
     nixd
+    hiddify-app
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
