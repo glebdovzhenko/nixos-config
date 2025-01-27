@@ -188,6 +188,7 @@
     rustup
     nixd
     hiddify-app
+    bat
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
