@@ -189,6 +189,7 @@
     nixd
     hiddify-app
     bat
+    glow
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
