@@ -126,7 +126,7 @@
   users.users.glebd = {
     isNormalUser = true;
     description = "Gleb Dovzhenko";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     shell = pkgs.zsh;
   };
 
@@ -218,7 +218,10 @@
     pkgs.openocd
   ];
 
-  services.udev.extraRules = "SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", GROUP=\"users\", MODE=\"0666\"";
+  services.udev.extraRules = ''
+    SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", GROUP=\"users\", MODE=\"0666\"\n
+    SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"10c4\", ATTRS{idProduct}==\"ea60\", GROUP=\"users\", MODE=\"0666\"
+  '';
 
   # List services that you want to enable:
 
