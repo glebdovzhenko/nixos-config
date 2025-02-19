@@ -115,12 +115,12 @@
   # zsh
   programs.zsh.enable = true;
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
-  ];
-  #fonts.packages = [
-  #  pkgs.nerd-fonts.dejavu-sans-mono
+  #fonts.packages = with pkgs; [
+  #  (nerdfonts.override { fonts = [ "DejaVuSansMono" ]; })
   #];
+  fonts.packages = [
+    pkgs.nerd-fonts.dejavu-sans-mono
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.glebd = {
