@@ -190,6 +190,7 @@
     hiddify-app
     bat
     glow
+    texliveFull
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
