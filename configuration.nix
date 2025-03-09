@@ -191,6 +191,7 @@
     bat
     glow
     texliveFull
+    inkscape-with-extensions
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
