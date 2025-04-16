@@ -1,10 +1,10 @@
 {
   imports = [
     ./alacritty.nix
-    ./direnv.nix
-    ./git.nix
+    #./direnv.nix
+    #./git.nix
     #./gnupg.nix
-    ./nvim.nix
+    #./nvim.nix
     ./tmux.nix
     ./zsh.nix
   ];
