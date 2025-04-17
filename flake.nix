@@ -20,8 +20,8 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.glebd = import ./home.nix;
+          nixpkgs.overlays = [inputs.neovim-nightly-overlay];
         }
-        nixpkgs.overlays = [inputs.neovim-nightly-overlay];
       ];
     };
   };
