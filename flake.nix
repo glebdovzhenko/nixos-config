@@ -21,6 +21,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.glebd = import ./home.nix;
         }
+        nixpkgs.overlays = [inputs.neovim-nightly-overlay];
       ];
     };
   };
