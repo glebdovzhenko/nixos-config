@@ -154,9 +154,9 @@
     zotero
     # cli
     wget
-    alacritty
+    #alacritty
     tmux
-    neovim
+    #neovim
     htop
     zoxide
     pass
