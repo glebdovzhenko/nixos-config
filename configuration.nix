@@ -192,6 +192,7 @@
     glow
     texliveFull
     inkscape-with-extensions
+    wayland-scanner
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
