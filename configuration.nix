@@ -70,8 +70,8 @@
   };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
   #services.xserver.displayManager.gdm.wayland = false;
 
   # Configure keymap in X11
@@ -222,10 +222,10 @@
     pkgs.openocd
   ];
 
-  services.udev.extraRules = ''
-    SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", GROUP=\"users\", MODE=\"0666\"\n
-    SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"10c4\", ATTRS{idProduct}==\"ea60\", GROUP=\"users\", MODE=\"0666\"
-  '';
+  #services.udev.extraRules = ''
+  #  SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", GROUP=\"users\", MODE=\"0666\"\n
+  #  SUBSYSTEMS==\"usb\", ATTRS{idVendor}==\"10c4\", ATTRS{idProduct}==\"ea60\", GROUP=\"users\", MODE=\"0666\"
+  #'';
 
   # List services that you want to enable:
 
