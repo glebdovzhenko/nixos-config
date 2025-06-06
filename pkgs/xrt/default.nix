@@ -1,8 +1,9 @@
 { 
   pkgs,
+  buildPythonPackage,
 }:
 
-pkgs.python3Packages.buildPythonPackage {
+buildPythonPackage {
   pname = "xrt";
   version = "1.6.1";
   src = pkgs.fetchFromGitHub {
