@@ -1,5 +1,5 @@
 { 
-  python3,
+  python,
   buildPythonPackage,
   fetchFromGitHub,
 }:
@@ -16,7 +16,7 @@ buildPythonPackage {
 
   postInstall = ''
     makeWrapper $out/bin/xrtQookStart.py $out/bin/xrtQook --run "chmod -R 777 \$HOME/.xrt"
-    makeWrapper ${python3.interpreter} $out/bin/xrtBentXtal \
+    makeWrapper ${python.interpreter} $out/bin/xrtBentXtal \
     --add-flags "$out/lib/python3.12/site-packages/xrt/gui/xrtBentXtal.py" \
     --run "chmod -R 777 \$HOME/.xrt"
   '';
