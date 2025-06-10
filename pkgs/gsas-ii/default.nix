@@ -39,7 +39,7 @@ buildPythonPackage {
 
   dependencies = [
     numpy_1
-    scipy
+    (scipy.override { numpy = numpy_1; })
     meson
     cython
     pybind11
