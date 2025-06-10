@@ -8,7 +8,6 @@
 , pkg-config
 , stdenv
 , numpy_1
-, numpy
 , scipy
 , meson
 , cython
@@ -39,7 +38,7 @@ buildPythonPackage {
   };
 
   dependencies = [
-    (numpy.override { numpy = numpy_1; })
+    numpy_1
     (scipy.override { numpy = numpy_1; })
     meson
     cython
