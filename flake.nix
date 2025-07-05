@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    #neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
@@ -17,11 +17,11 @@
         ./configuration.nix
         home-manager.nixosModules.home-manager
         {
-          nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+          #nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           # glebd config
-          home-manager.users.glebd = {
+          home-manager.users.glebd = rec {
             home.username = "glebd";
             home.homeDirectory = "/home/glebd";
             home.stateVersion = "24.05";
