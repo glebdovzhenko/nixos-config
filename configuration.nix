@@ -193,6 +193,7 @@
     texliveFull
     inkscape-with-extensions
     wayland-scanner
+    candle
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
