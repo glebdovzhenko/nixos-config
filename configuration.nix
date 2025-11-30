@@ -187,7 +187,6 @@
     libreoffice
     rustup
     nixd
-    hiddify-app
     bat
     glow
     texliveFull

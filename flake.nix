@@ -36,8 +36,13 @@
 
             programs.git = {
               enable = true;
-              userName = "Gleb Dovzhenko";
-              userEmail = "dovjenko.g@gmail.com";
+              settings = {
+                user =
+                  {
+                    name = "Gleb Dovzhenko";
+                    email = "dovjenko.g@gmail.com";
+                  };
+              };
             };
 
             programs.neovim = {
