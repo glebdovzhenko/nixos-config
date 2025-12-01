@@ -193,9 +193,6 @@
     inkscape-with-extensions
     wayland-scanner
     candle
-
-    xray
-    sing-box
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
