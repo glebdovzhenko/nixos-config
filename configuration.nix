@@ -193,6 +193,7 @@
     inkscape-with-extensions
     wayland-scanner
     candle
+    virtualbox
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
