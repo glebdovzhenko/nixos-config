@@ -112,6 +112,7 @@
 
   # V2Ray client 
   services.v2raya.enable = true;
+  services.v2raya.cliPackage = pkgs.xray;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -198,7 +199,10 @@
     wayland-scanner
     candle
     virtualbox
+    # VPN
     v2raya
+    tproxy
+    xray
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
