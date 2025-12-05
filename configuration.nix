@@ -203,7 +203,13 @@
     v2raya
     tproxy
     xray
+    # nixos helper
+    nix-search-tv 
   ];
+
+  environment.shellAliases = {
+    ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+  };
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.firefox.enable = true;
