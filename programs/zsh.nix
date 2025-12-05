@@ -24,9 +24,7 @@
       autoload -Uz compinit && compinit
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
       '';
-    aliases = {
-      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
-  };
+
 
   };
 }
