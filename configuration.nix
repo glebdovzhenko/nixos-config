@@ -109,6 +109,10 @@
     #media-session.enable = true;
   };
 
+
+  # V2Ray client 
+  services.v2raya.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -194,6 +198,7 @@
     wayland-scanner
     candle
     virtualbox
+    v2raya
   ];
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
