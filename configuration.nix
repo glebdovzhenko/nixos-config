@@ -205,6 +205,7 @@
     xray
     # nixos helper
     nix-search-tv 
+    yazi
   ];
 
   environment.shellAliases = {
