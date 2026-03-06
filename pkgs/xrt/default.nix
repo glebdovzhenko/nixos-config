@@ -1,4 +1,4 @@
-{ 
+{
   python,
   buildPythonPackage,
   fetchFromGitHub,
@@ -21,4 +21,3 @@ buildPythonPackage {
     --run "chmod -R 777 \$HOME/.xrt"
   '';
 }
-

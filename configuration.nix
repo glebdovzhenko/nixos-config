@@ -1,14 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Enabling flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -45,7 +47,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # CUDA 
+  # CUDA
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
@@ -66,7 +68,11 @@
   # Intel opencl
   hardware.graphics = {
     enable = true;
-    extraPackages = [ pkgs.intel-compute-runtime pkgs.ocl-icd pkgs.intel-ocl ];
+    extraPackages = [
+      pkgs.intel-compute-runtime
+      pkgs.ocl-icd
+      pkgs.intel-ocl
+    ];
   };
 
   # Enable the GNOME Desktop Environment.
@@ -82,12 +88,15 @@
 
   # NTFS
   boot.supportedFilesystems = [ "ntfs" ];
-  fileSystems."/home/glebd/Data" =
-    {
-      device = "/dev/disk/by-uuid/5252D85E52D847FD";
-      fsType = "ntfs-3g";
-      options = [ "rw" "uid=1000" "nofail" ];
-    };
+  fileSystems."/home/glebd/Data" = {
+    device = "/dev/disk/by-uuid/5252D85E52D847FD";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "nofail"
+    ];
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -109,8 +118,7 @@
     #media-session.enable = true;
   };
 
-
-  # V2Ray client 
+  # V2Ray client
   services.v2raya.enable = true;
   services.v2raya.cliPackage = pkgs.xray;
 
@@ -128,10 +136,16 @@
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.groups.docker.members = [ "glebd" ];
   users.users.glebd = {
     isNormalUser = true;
     description = "Gleb Dovzhenko";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -152,16 +166,12 @@
     cudaPackages.cudatoolkit
     gparted
     efibootmgr
-    # various
     chromium
     telegram-desktop
     obsidian
     zotero
-    # cli
     wget
-    #alacritty
     tmux
-    #neovim
     htop
     zoxide
     pass
@@ -170,7 +180,6 @@
     ripgrep
     fd
     lazygit
-    # dev
     git
     gnumake
     gcc
@@ -187,11 +196,15 @@
     luajitPackages.luarocks
     luajitPackages.lua-lsp
     lua-language-server
+    docker
+    docker-compose
+    lazydocker
     nixpkgs-fmt
     wl-clipboard
     libreoffice
     rustup
     nixd
+    nixfmt
     bat
     glow
     texliveFull
@@ -199,17 +212,19 @@
     wayland-scanner
     candle
     virtualbox
-    # VPN
     v2raya
     tproxy
     xray
-    # nixos helper
-    nix-search-tv 
+    nix-search-tv
     yazi
   ];
 
   environment.shellAliases = {
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+  };
+  virtualisation.docker.enable = true;
+  virtualisation.docker.daemon.settings = {
+    data-root = "/home/glebd/Data/DockerData";
   };
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
@@ -223,7 +238,7 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
-    # GTK apps started dying at some point and this is a fix 
+    # GTK apps started dying at some point and this is a fix
     GSK_RENDERER = "gl";
   };
 
