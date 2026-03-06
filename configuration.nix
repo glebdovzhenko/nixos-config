@@ -198,6 +198,7 @@
     lua-language-server
     docker
     docker-compose
+    docker-language-server
     lazydocker
     nixpkgs-fmt
     wl-clipboard
