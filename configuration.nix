@@ -223,9 +223,9 @@
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
   };
   virtualisation.docker.enable = true;
-  virtualisation.docker.daemon.settings = {
-    data-root = "/home/glebd/Data/DockerData";
-  };
+  #virtualisation.docker.daemon.settings = {
+  #  data-root = "/home/glebd/Data/DockerData";
+  #};
 
   #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.firefox.enable = true;
