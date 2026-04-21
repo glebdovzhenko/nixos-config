@@ -168,6 +168,7 @@
     gparted
     efibootmgr
     chromium
+    brave
     telegram-desktop
     obsidian
     zotero
@@ -199,7 +200,6 @@
     lua-language-server
     docker
     docker-compose
-    docker-language-server
     lazydocker
     nixpkgs-fmt
     wl-clipboard
@@ -225,11 +225,7 @@
     ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
   };
   virtualisation.docker.enable = true;
-  #virtualisation.docker.daemon.settings = {
-  #  data-root = "/home/glebd/Data/DockerData";
-  #};
 
-  #nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
   programs.firefox.enable = true;
 
   environment.sessionVariables = {
