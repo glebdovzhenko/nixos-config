@@ -219,6 +219,7 @@
     xray
     nix-search-tv
     yazi
+    xhost
   ];
 
   environment.shellAliases = {
