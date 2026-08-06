@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "dotfiles": {
+      "locked": {
+        "lastModified": 1780737653,
+        "narHash": "sha256-dLbbHfN4ekoOfeGMv/x6mreWQRgbBUaTp0M4TNwUmpU=",
+        "owner": "glebdovzhenko",
+        "repo": "dotfiles",
+        "rev": "d5d5d612ec62c098f5263e8d075bf7ec54f484a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glebdovzhenko",
+        "ref": "nixos",
+        "repo": "dotfiles",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -39,6 +55,7 @@
     },
     "root": {
       "inputs": {
+        "dotfiles": "dotfiles",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
