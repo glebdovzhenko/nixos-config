@@ -151,6 +151,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "firefox-esr-140-bin-unwrapped-140.17.0esr"
+  ];
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
@@ -183,6 +186,7 @@
     fd
     lazygit
     git
+    git-lfs
     gnumake
     gcc
     clang-tools
