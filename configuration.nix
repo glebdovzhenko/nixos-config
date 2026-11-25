@@ -201,6 +201,7 @@
     luajit
     luajitPackages.luarocks
     luajitPackages.lua-lsp
+    luajitPackages.tree-sitter-cli
     lua-language-server
     docker
     docker-compose
